@@ -65,7 +65,7 @@ class UserProfileTopContainer extends StatelessWidget {
                     style: FontStyle.italic,
                     weight: FontWeight.w400),
                 const FractionalTranslation(
-                  translation: Offset(1.4, -0.4),
+                  translation: Offset(1.2, -0.6),
                   child: CustomBadge(),
                 )
               ])
@@ -99,10 +99,10 @@ class UserProfileTopContainer extends StatelessWidget {
             width: 263.w,
             color: const Color(0xffd8e9f1),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 SizedBox(
-                  width: 62.w,
+                  width: 70.w,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: const [

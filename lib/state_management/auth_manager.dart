@@ -46,10 +46,11 @@ class AuthManager extends GetxController {
       if (firebaseResponse == 'Success') {
         //After successful registrations, take the user to login page to sign in
         Get.offAll(() => const LoginScreen());
+        await Future.delayed(const Duration(seconds: 1));
       } else {
         //If error occured during sign up, show a snackbar with the message
         isSigning(false);
-        Get.snackbar('Error', firebaseResponse!,
+        Get.snackbar('Firebase error', firebaseResponse!,
             snackPosition: SnackPosition.BOTTOM,
             backgroundColor: Colors.black,
             colorText: Colors.white);
@@ -80,9 +81,10 @@ class AuthManager extends GetxController {
       if (firebaseResponse == 'Success') {
         //if signed in successfully, take them to the dashboard
         Get.offAll(() => const Dashboard());
+        await Future.delayed(const Duration(seconds: 1));
       } else {
         isSigning(false);
-        Get.snackbar('Error', firebaseResponse!,
+        Get.snackbar('Firebase error', firebaseResponse!,
             snackPosition: SnackPosition.BOTTOM,
             backgroundColor: Colors.black,
             colorText: Colors.white);
