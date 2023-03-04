@@ -2,7 +2,8 @@ import 'package:get/get.dart';
 import 'package:ronvest_app/models/auth_response.dart';
 import 'package:ronvest_app/models/login_model.dart';
 import 'package:ronvest_app/models/register_model.dart';
-import 'package:ronvest_app/utils/apis.dart';
+
+import '../utils/api.dart';
 
 //Class reponsible for making api calls
 class ApiService extends GetConnect {

@@ -65,7 +65,7 @@ class UserProfileTopContainer extends StatelessWidget {
                     style: FontStyle.italic,
                     weight: FontWeight.w400),
                 const FractionalTranslation(
-                  translation: Offset(1.2, -0.8),
+                  translation: Offset(1.4, -0.4),
                   child: CustomBadge(),
                 )
               ])

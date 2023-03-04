@@ -13,13 +13,23 @@ class UserProfileView
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          UserProfileTopContainer(
-            controller: controller,
-          ),
-          const UserProfileBottomContainer()
-        ],
+      body: FutureBuilder(
+        future: controller.getProfile,
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            return Column(
+              children: [
+                UserProfileTopContainer(
+                  controller: controller,
+                ),
+                const UserProfileBottomContainer()
+              ],
+            );
+          }
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
+        },
       ),
     );
   }

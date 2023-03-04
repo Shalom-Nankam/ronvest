@@ -14,16 +14,18 @@ class UserProfileScreen extends StatefulWidget {
 class UserProfileController extends State<UserProfileScreen> {
   final AuthManager authManager = Get.find();
 
+  late Future<void> getProfile;
+
   @override
   void initState() {
-    getProfile();
+    getProfile = authManager.getProfile();
     super.initState();
   }
 
 //make api call to get the user profile
-  void getProfile() async {
-    await authManager.getProfile();
-  }
+  // Fuvoid getProfile() async {
+  //   await authManager.getProfile();
+  // }
 
   @override
   Widget build(BuildContext context) {

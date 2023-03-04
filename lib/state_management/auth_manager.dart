@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:ronvest_app/controllers/home_page_controller.dart';
 import 'package:ronvest_app/controllers/login_controller.dart';
 import 'package:ronvest_app/models/auth_response.dart';
 import 'package:ronvest_app/models/login_model.dart';
 import 'package:ronvest_app/models/register_model.dart';
 import 'package:ronvest_app/utils/global_variables.dart';
+import 'package:ronvest_app/views/dashboard.dart';
 
 //Handles app wide authentication states
 class AuthManager extends GetxController {
-  //if user is currently signing in
+  //if user is currently being signed in
   var isSigning = false.obs;
 
-//user to be registerd newly, originally empty until a user
+//user to be registered newly, originally empty until a user
 //fills in their details
   RegisterModel userToSignUp =
       RegisterModel(username: '', email: '', password: '');
@@ -78,8 +78,8 @@ class AuthManager extends GetxController {
       String? firebaseResponse = await repository.signInFirebase(
           email: currentUser["user_info"]["email"], password: user.password);
       if (firebaseResponse == 'Success') {
-        //if signed in successfully, take them to the home page
-        Get.offAll(() => const HomePageScreen());
+        //if signed in successfully, take them to the dashboard
+        Get.offAll(() => const Dashboard());
       } else {
         isSigning(false);
         Get.snackbar('Error', firebaseResponse!,
@@ -101,7 +101,11 @@ class AuthManager extends GetxController {
   }
 
 //get the current user's profile from api service
-  getProfile() async {
+  Future<void> getProfile() async {
+    //avoid recurring fetches
+    if (userProfile.isNotEmpty) {
+      return;
+    }
     Response serverResponse = await repository.getProfile(
         currentUser["access_token"], currentUser["user_id"]);
     if (isConnectionSuccesful(serverResponse.statusCode!)) {
