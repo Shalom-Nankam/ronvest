@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "779145413441",
+    "firebase_url": "https://ronvest-app-1-default-rtdb.firebaseio.com",
+    "project_id": "ronvest-app-1",
+    "storage_bucket": "ronvest-app-1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:779145413441:android:5a14350dd32a2648a197c0",
+        "android_client_info": {
+          "package_name": "com.example.ronvest_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "779145413441-ariqfa9v349g3ktc0fueod6hglu9fk9m.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCw-i75cFXJ9pyXX6QBBX4D0WAv4zrisc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "779145413441-ariqfa9v349g3ktc0fueod6hglu9fk9m.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "779145413441-hnsid8m6i2dpothu8v0e2sr94fsgpdhk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.ronvestApp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
